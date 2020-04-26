@@ -24,12 +24,19 @@ run:
 	./build/main
 
 run-task-1:
-	cat access.log | tail -10
+	#prints last 10 lines from the access.log file
+	tail -10 access.log
 
 run-task-2:
-	sort access.log | grep -Eo '^[^ ]+' access.log | uniq
+	#cat to access the access.log file then
+	#cut separates the IP addresses using fields -f separated by a -d delimiter
+	#uniq then filters out repeated lines in the file and deletes them
+	cat access.log | cut -d ' ' -f 1 | uniq
 
 run-task-3:
+	#sort rearranges the access.log file then
+    #grep searches for the requests -w that contain 404
+    #cut then extracts only the REQUEST part using fields -f separated by the -d delimiter
 	sort access.log | grep 404 -w | cut -f 2 -d '"'
 
 run-task-4:
