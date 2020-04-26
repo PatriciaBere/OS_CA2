@@ -31,7 +31,7 @@ run-task-1:
 run-task-2:
 	#displays the sentence then 
 	#tr changes the lower case letters to uppercase using [:lower:][:upper:]
-	echo "The quick brown fox jumps over the lazy dog\n" | tr [:lower:][:upper:]
+	echo "The quick brown fox jumps over the lazy dog\n" | tr [:lower:] [:upper:]
 
 run-task-3:
 	#curl transfers the dkit html source code 
